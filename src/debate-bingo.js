@@ -39,3 +39,5 @@ ReactDOM.render(
     <h1>Hello world!</h1>,
     document.getElementById("content")
 );
+
+// Next step: keep going from here https://medium.com/@viatsko/react-for-beginners-part-1-setting-up-repository-babel-express-web-server-webpack-a3a90cc05d1e#64be
