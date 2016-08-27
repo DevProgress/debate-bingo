@@ -1,7 +1,9 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/debate-bingo.js',
+  context: __dirname,
   output: {
     path: './dist',
     filename: 'bundle.js'       
@@ -22,7 +24,11 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('styles.css', {
       allChunks: true
-    })
+    }),
+    new CopyPlugin([
+      {from: 'src/index.html'},
+      {from: 'data', to: 'data'}
+    ])
   ],
   resolve: {
     extensions: ['', '.js', '.json'] 
