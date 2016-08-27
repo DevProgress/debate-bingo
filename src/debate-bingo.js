@@ -1,11 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+const CARD_DATA_API = "api/getCardData";
+
 let BingoCard = React.createClass({
+    getInitialState: function() {
+        return {
+            rows: []
+        };
+    },
+    componentDidMount: function() {
+        let getCardDataUrl = `${CARD_DATA_API}?type=${this.props.type}`;
+        $.ajax({
+            url: getCardDataUrl,
+            dataType: 'json',
+            cache: false,
+            success: function(data) {
+                this.setState({rows: data});
+            }.bind(this),
+            error: function(xhr, status, err) {
+                console.error(getCardDataUrl, status, err.toString());
+            }.bind(this)
+        });
+    },
     render: function() {
-        let bingoRows = this.props.rows.map(function(row) {
+        let bingoRows = this.state.rows.map(function(row) {
             return (
-                <BingoRow tiles="{row.tiles}" />
+                <BingoRow tiles={row.tiles} />
             );
         });
         return (
@@ -21,7 +42,7 @@ let BingoRow = React.createClass({
         let bingoTiles = this.props.tiles.map(function(tile) {
             return (
                 <td>
-                    <BingoTile color="{tile.color}">
+                    <BingoTile colorClass={tile.colorClass}>
                         {tile.text}
                     </BingoTile>
                 </td>
@@ -35,9 +56,17 @@ let BingoRow = React.createClass({
     }
 });
 
+let BingoTile = React.createClass({
+    render: function() {
+        return (
+            <a href="#" className={this.props.colorClass}>
+                {this.props.children}
+            </a>
+        );
+    }
+});
+
 ReactDOM.render(
-    <h1>Hello world!</h1>,
+    <BingoCard type="democrat" />,
     document.getElementById("content")
 );
-
-// Next step: keep going from here https://medium.com/@viatsko/react-for-beginners-part-1-setting-up-repository-babel-express-web-server-webpack-a3a90cc05d1e#64be
