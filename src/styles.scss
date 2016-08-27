@@ -1,0 +1,12 @@
+$democratBlue: #00a;
+$republicanRed: #800;
+
+td {
+    border: 1px solid transparent;
+}
+.democrat {
+    border-color: $democratBlue
+}
+.republican {
+    border-color: $republicanRed;
+}

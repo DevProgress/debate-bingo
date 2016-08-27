@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Styles from './styles.scss';
 
 const CARD_DATA_API = "api/getCardData";
 
@@ -10,7 +11,7 @@ let BingoCard = React.createClass({
         };
     },
     componentDidMount: function() {
-        let getCardDataUrl = `${CARD_DATA_API}?type=${this.props.type}`;
+        let getCardDataUrl = `${CARD_DATA_API}/${this.props.type}`;
         $.ajax({
             url: getCardDataUrl,
             dataType: 'json',
@@ -24,14 +25,26 @@ let BingoCard = React.createClass({
         });
     },
     render: function() {
-        let bingoRows = this.state.rows.map(function(row) {
+        let bingoRows = this.state.rows.map(function(row, i) {
+            let key = `row-${i}`;
             return (
-                <BingoRow tiles={row.tiles} />
+                <BingoRow tiles={row} key={key} />
             );
         });
         return (
             <table>
-                {bingoRows}
+                <thead>
+                    <tr>
+                        <th>B</th>
+                        <th>I</th>
+                        <th>N</th>
+                        <th>G</th>
+                        <th>O</th>                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {bingoRows}
+                </tbody>
             </table>
         );
     }
@@ -39,13 +52,12 @@ let BingoCard = React.createClass({
 
 let BingoRow = React.createClass({
     render: function() {
-        let bingoTiles = this.props.tiles.map(function(tile) {
+        let bingoTiles = this.props.tiles.map(function(tile, i) {
+            let key = `tile-${i}`;
             return (
-                <td>
-                    <BingoTile colorClass={tile.colorClass}>
-                        {tile.text}
-                    </BingoTile>
-                </td>
+                <BingoTile colorClass={tile.colorClass} key={key}>
+                    {tile.text}
+                </BingoTile>
             );
         });
         return (
@@ -59,14 +71,16 @@ let BingoRow = React.createClass({
 let BingoTile = React.createClass({
     render: function() {
         return (
-            <a href="#" className={this.props.colorClass}>
-                {this.props.children}
-            </a>
+            <td className={this.props.colorClass}>
+                <a href="#">
+                    {this.props.children}
+                </a>
+            </td>
         );
     }
 });
 
 ReactDOM.render(
-    <BingoCard type="democrat" />,
+    <BingoCard type="hillary" />,
     document.getElementById("content")
 );
