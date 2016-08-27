@@ -72,7 +72,7 @@ let BingoTile = React.createClass({
     render: function() {
         return (
             <td className={this.props.colorClass}>
-                <a href="#">
+                <a href="#" className="bingoTile">
                     {this.props.children}
                 </a>
             </td>

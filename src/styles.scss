@@ -1,8 +1,32 @@
 $democratBlue: #00a;
 $republicanRed: #800;
 
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+table {
+    width: 100%;
+}
 td {
     border: 1px solid transparent;
+    width: 20%;
+    position: relative;
+}
+td:after {
+    content: '';
+    display: block;
+    margin-top: 100%;
+}
+td > * {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.bingoTile {
+    text-align: center;
+    vertical-align: middle;
 }
 .democrat {
     border-color: $democratBlue
