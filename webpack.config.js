@@ -6,7 +6,7 @@ module.exports = {
   context: __dirname,
   output: {
     path: './dist',
-    filename: 'bundle.js'       
+    filename: 'bundle.js'
   },
   module: {
     loaders: [

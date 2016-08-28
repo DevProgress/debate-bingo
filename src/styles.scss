@@ -6,27 +6,29 @@ body {
 }
 table {
     width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+th {
+    font-size: 2em;
 }
 td {
     border: 1px solid transparent;
-    width: 20%;
-    position: relative;
-}
-td:after {
-    content: '';
-    display: block;
-    margin-top: 100%;
-}
-td > * {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    width: 20vw;
+    height: 20vw;
+    text-align: center;
+    vertical-align: middle;
 }
 .bingoTile {
     text-align: center;
     vertical-align: middle;
+}
+.daubed {
+    // TODO: make better daub marker
+    background-color: red;
+}
+.highlighted {
+    background-color: coral;
 }
 .democrat {
     border-color: $democratBlue
