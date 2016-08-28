@@ -4,6 +4,7 @@ import BingoTile from './BingoTile';
 
 export default class BingoRow extends React.Component {
     render() {
+        let rowDaubs = this.props.daubs[this.props.rowIndex];
         let bingoTiles = this.props.tiles.map(function(tile, i) {
             let onTileDaubed = function() {
                 return this.props.onTileDaubed(i);
@@ -12,8 +13,8 @@ export default class BingoRow extends React.Component {
             return (
                 <BingoTile
                     colorClass={tile.colorClass}
-                    isDaubed={this.props.daubs[i] === 1}
-                    isHighlighted={this.props.daubs[i] === 2}
+                    isDaubed={rowDaubs[i] === 1}
+                    isHighlighted={rowDaubs[i] === 2}
                     onTileDaubed={onTileDaubed}
                     key={key}>
                     {tile.text}

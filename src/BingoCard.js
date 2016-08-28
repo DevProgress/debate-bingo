@@ -17,20 +17,23 @@ export default class BingoCard extends React.Component {
         super();
         this.state = {
             rows: [],
-            daubs: EMPTY_BOARD.slice(),
+            daubs: BingoCard.clone2DArray(EMPTY_BOARD),
             isBingo: false
         };
         autoBind(this);
     }
     componentDidMount() {
+        this.loadCard(function(data) {
+            this.setState({rows: data});
+        }.bind(this));
+    }
+    loadCard(onSuccess) {
         let getCardDataUrl = `${CARD_DATA_API}/${this.props.type}`;
         $.ajax({
             url: getCardDataUrl,
             dataType: 'json',
             cache: false,
-            success: function(data) {
-                this.setState({rows: data});
-            }.bind(this),
+            success: onSuccess,
             error: function(xhr, status, err) {
                 console.error(getCardDataUrl, status, err.toString());
             }.bind(this)
@@ -40,12 +43,15 @@ export default class BingoCard extends React.Component {
         let bingoOverlay = !this.state.isBingo ? null : (
             <div className="bingoOverlay">
                 <h2>Bingo!</h2>
+                <p>
+                    <a href="#" onClick={this.playAgain}>Play again</a>
+                </p>
             </div>
         );
         let bingoRows = this.state.rows.map(function(row, i) {
             let key = `row-${i}`;
             return (
-                <BingoRow tiles={row} daubs={this.state.daubs[i]} onTileDaubed={this.handleTileDaubed.bind(this, i)} key={key} />
+                <BingoRow tiles={row} rowIndex={i} daubs={this.state.daubs} onTileDaubed={this.handleTileDaubed.bind(this, i)} key={key} />
             );
         }.bind(this));
         return (
@@ -72,10 +78,10 @@ export default class BingoCard extends React.Component {
         if(this.state.isBingo) {
             return;
         }
-        let newDaubs = this.state.daubs.slice();
+        let newDaubs = BingoCard.clone2DArray(this.state.daubs);
         newDaubs[row][col] = newDaubs[row][col] === 0 ? 1 : 0;
         this.setState({daubs: newDaubs});
-        this.checkBingo(row, col);
+        setTimeout(function() { this.checkBingo(row, col) }.bind(this), 0);
     }
     checkBingo(row, col) {
         if(this.checkRow(row)) {
@@ -124,7 +130,7 @@ export default class BingoCard extends React.Component {
         return true;
     }
     bingo(type, idx) {
-        let newDaubs = this.state.daubs.slice();
+        let newDaubs = BingoCard.clone2DArray(this.state.daubs);
         if(type === 'row') {
             for(let i=0; i<5; i++) {
                 newDaubs[idx][i] = 2;
@@ -143,5 +149,19 @@ export default class BingoCard extends React.Component {
             }
         }
         this.setState({daubs: newDaubs, isBingo: true});
+    }
+    playAgain() {
+        this.loadCard(function(data) {
+            this.setState({
+                isBingo: false,
+                daubs: BingoCard.clone2DArray(EMPTY_BOARD),
+                rows: data
+            });
+        }.bind(this));
+    }
+    static clone2DArray(arr) {
+        return arr.map(function(row) {
+            return row.slice();
+        });
     }
 }
