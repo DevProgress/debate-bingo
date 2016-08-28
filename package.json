@@ -9,7 +9,7 @@
   "main": "dist/debate-bingo.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node tools/build.js",
+    "webpack": "webpack",
     "webpack-watch": "webpack -w",
     "express-server": "node server",
     "dev": "concurrent --kill-others \"npm run webpack-watch\" \"npm run express-server\""
