@@ -28,7 +28,12 @@ module.exports = {
     new CopyPlugin([
       {from: 'src/index.html'},
       {from: 'data', to: 'data'}
-    ])
+    ]),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': '"' + process.env.NODE_ENV + '"'
+      }
+    }),
   ],
   resolve: {
     extensions: ['', '.js', '.json'] 
