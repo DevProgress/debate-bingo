@@ -1,5 +1,6 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyPlugin = require('copy-webpack-plugin');
+var webpack = require('webpack');
 
 module.exports = {
   entry: './src/debate-bingo.js',
