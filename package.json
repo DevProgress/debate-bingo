@@ -14,7 +14,7 @@
     "webpack-watch": "NODE_ENV=development webpack -w",
     "express-server": "node server",
     "dev": "concurrent --kill-others \"npm run webpack-watch\" \"npm run express-server\"",
-    "prepublish": "npm run webpack-prod",
+    "postinstall": "npm run webpack-prod",
     "clean": "node -e \"var rimraf=require('rimraf'); rimraf.sync('dist')\"",
     "start": "npm run express-server"
   },
