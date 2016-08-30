@@ -7,7 +7,7 @@ const CARD_DATA_API = "api/getCardData";
 const EMPTY_BOARD = [
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
+    [0, 0, -1, 0, 0],
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0]
 ];

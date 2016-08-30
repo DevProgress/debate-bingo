@@ -9,15 +9,17 @@ export default class BingoRow extends React.Component {
             let onTileDaubed = function() {
                 return this.props.onTileDaubed(i);
             }.bind(this);
-            let key = `tile-${i}`;
+            let key = `tile-${i}`,
+                tileText = rowDaubs[i] === -1 ? 'Free Square!': tile.text;
             return (
                 <BingoTile
                     colorClass={tile.colorClass}
                     isDaubed={rowDaubs[i] === 1}
                     isHighlighted={rowDaubs[i] === 2}
+                    isFreeSquare={rowDaubs[i] === -1}
                     onTileDaubed={onTileDaubed}
-                    key={key}>
-                    {tile.text}
+                    key={key}
+                    tileText={tileText}>
                 </BingoTile>
             );
         }.bind(this));
