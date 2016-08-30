@@ -10,9 +10,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack",
+    "webpack-prod": "webpack -p",
     "webpack-watch": "webpack -w",
     "express-server": "node server",
-    "dev": "concurrent --kill-others \"npm run webpack-watch\" \"npm run express-server\""
+    "dev": "concurrent --kill-others \"npm run webpack-watch\" \"npm run express-server\"",
+    "prepublish": "npm run webpack-prod",
+    "clean": "node -e \"var rimraf=require('rimraf'); rimraf.sync('dist')\"",
+    "start": "npm run express-server"
+  },
+  "engines": {
+    "node": "4.5.0"
   },
   "keywords": [
     "debate",
@@ -42,6 +49,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "fs-extra": "^0.30.0",
     "node-sass": "^3.8.0",
+    "rimraf": "^2.5.4",
     "sass": "^0.5.0",
     "sass-loader": "^4.0.0"
   }
