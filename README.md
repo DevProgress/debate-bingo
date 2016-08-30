@@ -9,11 +9,12 @@ Debate bingo is a simple mobile web app built with Node.js on the server and Rea
 
 ### Tools
 #### Prerequisites
-* Node.js
-* Git
+* [Node.js](https://nodejs.org)
+* [Git](https://git-scm.com)
+* [Heroku CLI](https://cli.heroku.com/)
 
 #### Commands
-To build, run
+To build and watch, run
 
     npm run dev
 

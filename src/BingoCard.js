@@ -44,7 +44,7 @@ export default class BingoCard extends React.Component {
             <div className="bingoOverlay">
                 <h2>Bingo!</h2>
                 <p>
-                    <a href="#" onClick={this.playAgain}>Play again</a>
+                    <a href="#" onClick={this.props.onPlayAgainRequested}>Play again</a>
                 </p>
             </div>
         );
@@ -149,15 +149,6 @@ export default class BingoCard extends React.Component {
             }
         }
         this.setState({daubs: newDaubs, isBingo: true});
-    }
-    playAgain() {
-        this.loadCard(function(data) {
-            this.setState({
-                isBingo: false,
-                daubs: BingoCard.clone2DArray(EMPTY_BOARD),
-                rows: data
-            });
-        }.bind(this));
     }
     static clone2DArray(arr) {
         return arr.map(function(row) {

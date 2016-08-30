@@ -1,12 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import autoBind from 'react-autobind';
 import BingoCard from './BingoCard';
+import WelcomePage from './WelcomePage';
 
 export default class BingoApp extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            playing: false,
+            cardType: null
+        };
+        autoBind(this);
+    }
     render() {
-        // TODO: make this more than just a loader for a static card
+        if(this.state.playing) {
+            return (
+                <BingoCard type={this.state.cardType} onPlayAgainRequested={this.playAgain} />
+            );
+        }
         return (
-            <BingoCard type="hillary" />
+            <WelcomePage onCardTypeSelected={this.selectCardType} />
         );
+    }
+    selectCardType(type) {
+        this.setState({cardType: type, playing: true});
+    }
+    playAgain() {
+        this.setState({playing: false});
     }
 }

@@ -1,5 +1,6 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyPlugin = require('copy-webpack-plugin');
+var webpack = require('webpack');
 
 module.exports = {
   entry: './src/debate-bingo.js',
@@ -27,8 +28,14 @@ module.exports = {
     }),
     new CopyPlugin([
       {from: 'src/index.html'},
+      {from: 'src/images/*', to: 'images/', flatten: true},
       {from: 'data', to: 'data'}
-    ])
+    ]),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': '"' + process.env.NODE_ENV + '"'
+      }
+    }),
   ],
   resolve: {
     extensions: ['', '.js', '.json'] 
