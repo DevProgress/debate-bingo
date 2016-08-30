@@ -40,9 +40,7 @@
     "react": "^15.3.0",
     "react-autobind": "^1.0.6",
     "react-dom": "^15.3.0",
-    "webpack": "^1.13.2"
-  },
-  "devDependencies": {
+    "webpack": "^1.13.2",
     "concurrently": "^2.2.0",
     "copy-webpack-plugin": "^3.0.1",
     "css-loader": "^0.24.0",
