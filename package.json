@@ -9,9 +9,9 @@
   "main": "dist/debate-bingo.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack",
-    "webpack-prod": "webpack -p",
-    "webpack-watch": "webpack -w",
+    "webpack": "NODE_ENV=development webpack",
+    "webpack-prod": "NODE_ENV=production webpack -p",
+    "webpack-watch": "NODE_ENV=development webpack -w",
     "express-server": "node server",
     "dev": "concurrent --kill-others \"npm run webpack-watch\" \"npm run express-server\"",
     "prepublish": "npm run webpack-prod",
