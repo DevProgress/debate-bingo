@@ -4,7 +4,13 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Debate Bingo!</title>
-        <script src="http://code.jquery.com/jquery-3.1.0.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            var useHttps = window.location.match(/^https/i);
+            var jqueryScriptTag = document.createElement("SCRIPT");
+            jqueryScriptTag.type = "text/javascript";
+            jqueryScriptTag.src = (useHttps ? "https" : "http") + "://code.jquery.com/jquery-3.1.0.min.js";
+            document.head.appendChild(jqueryScriptTag);
+        </script>
         <link rel="stylesheet" type="text/css" href="styles.css" />
     </head>
     <body>
