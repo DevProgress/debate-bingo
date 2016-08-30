@@ -15,6 +15,9 @@ app.get('/api/getCardData/:type', function(req, res) {
         case "trump":
             res.sendFile('data/trump.json', options);
             return;
+        case "mixed":
+            res.sendFile('data/mixed.json', options);
+            return;
     }
 
     res.sendStatus(404);

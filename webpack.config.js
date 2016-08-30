@@ -28,6 +28,7 @@ module.exports = {
     }),
     new CopyPlugin([
       {from: 'src/index.html'},
+      {from: 'src/images/*', to: 'images/', flatten: true},
       {from: 'data', to: 'data'}
     ]),
     new webpack.DefinePlugin({
