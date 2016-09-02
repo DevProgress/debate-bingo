@@ -96,7 +96,7 @@ export default class BingoCard extends React.Component {
     }
     checkRow(row) {
         return this.state.daubs[row].every(function(val) {
-            return val === 1
+            return val === 1 || val === -1;
         });
     }
     checkCol(col) {

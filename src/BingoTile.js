@@ -11,6 +11,9 @@ export default class BingoTile extends React.Component {
         if(this.props.isHighlighted) {
             className += ' highlighted';
         }
+        if(this.props.isFreeSquare) {
+            className += ' free-square';
+        }
         if (!this.props.isFreeSquare) {
             button = (
                 <button className="bingoTile" onClick={this.props.onTileDaubed}>
