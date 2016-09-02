@@ -14,7 +14,7 @@ export default class BingoRow extends React.Component {
             return (
                 <BingoTile
                     colorClass={tile.colorClass}
-                    isDaubed={rowDaubs[i] === 1}
+                    isDaubed={rowDaubs[i] === 1 || rowDaubs[i] === -1}
                     isHighlighted={rowDaubs[i] === 2}
                     isFreeSquare={rowDaubs[i] === -1}
                     onTileDaubed={onTileDaubed}
