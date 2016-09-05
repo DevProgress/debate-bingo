@@ -24,7 +24,24 @@ function getTerms(termsFile) {
         ret.push(line);
     });
     return ret;
-} 
+}
+
+function getCardData(type) {
+    var hillary = type === 'hillary';
+    var trump = type === 'trump';
+    var mixed = hillary && trump;
+
+    var root = __dirname + '/dist/data/';
+    var terms;
+    if(hillary) {
+        terms = getTerms(root + 'hillary.dat');
+    }
+    if(trump) {
+        var trumpTerms = getTerms(root + 'trump.dat');
+        terms = mixed ? trumpTerms.concat(terms) : trumpTerms;
+    }
+    return getRandomSet(terms, 25);
+}
 
 app.use('/', express.static('dist'));
 app.get('/api/getCardData/:type', function(req, res) {
