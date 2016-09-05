@@ -3,6 +3,9 @@ import express from 'express';
 const app = express();
 
 function getRandomSet(arr, len) {
+    if(len > arr.length) {
+        throw 'len cannot exceed length of arr';
+    }
     var ret = [];
     var used = [];
     for(var i=0; i<len; i++) {
