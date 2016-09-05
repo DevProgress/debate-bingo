@@ -15,13 +15,13 @@ function getRandomSet(arr, len) {
     }
     return ret;
 }
-function getTerms(termsFile) {
+function getTerms(termsFile, party) {
     var lineReader = require('readline').createInterface({
         input: require('fs').createReadStream(termsFile)
     });
     var ret = [];
     lineReader.on('line', function (line) {
-        ret.push(line);
+        ret.push({text: line, colorClass: party});
     });
     return ret;
 }
@@ -31,37 +31,36 @@ function getCardData(type) {
     var trump = type === 'trump';
     var mixed = hillary && trump;
 
+    if(!(hillary || trump)) {
+       return null;
+    }
+
     var root = __dirname + '/dist/data/';
-    var terms;
+    var hillaryTerms, trumpTerms;
     if(hillary) {
-        terms = getTerms(root + 'hillary.dat');
+        hillaryTerms = getTerms(root + 'hillary.dat', 'democrat');
     }
     if(trump) {
-        var trumpTerms = getTerms(root + 'trump.dat');
-        terms = mixed ? trumpTerms.concat(terms) : trumpTerms;
+        trumpTerms = getTerms(root + 'trump.dat', 'republican');
     }
-    return getRandomSet(terms, 25);
+    if(mixed) {
+        var hillarySet = getRandomSet(hillaryTerms, 12);
+        var trumpSet = getRandomSet(trumpTerms, 12);
+        return getRandomSet(hillarySet.concat(trumpSet), 24);
+    }
+    var terms = hillary ? hillaryTerms : trumpTerms;
+    return getRandomSet(terms, 24);
 }
 
 app.use('/', express.static('dist'));
 app.get('/api/getCardData/:type', function(req, res) {
-    var options = {
-        root: __dirname + '/dist',
-        dotfiles: 'deny'
-    };
-    switch(req.params.type) {
-        case "hillary":
-            res.sendFile('data/hillary.json', options);
-            return;
-        case "trump":
-            res.sendFile('data/trump.json', options);
-            return;
-        case "mixed":
-            res.sendFile('data/mixed.json', options);
-            return;
+    var data = getCardData(req.params.type);
+
+    if(!data) {
+        res.sendStatus(404);
     }
 
-    res.sendStatus(404);
+    res.json(data);
 });
 
 app.listen(process.env.PORT || 3000);
