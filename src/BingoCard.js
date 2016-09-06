@@ -33,7 +33,10 @@ export default class BingoCard extends React.Component {
             url: getCardDataUrl,
             dataType: 'json',
             cache: false,
-            success: onSuccess,
+            success: function(data) {
+                data.splice(12, 0, {text: 'Free space!', colorClass: ''});
+                onSuccess(data);
+            },
             error: function(xhr, status, err) {
                 console.error(getCardDataUrl, status, err.toString());
             }.bind(this)
