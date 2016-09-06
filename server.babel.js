@@ -26,6 +26,7 @@ function getTerms(termsFile, party) {
     lineReader.on('line', function (line) {
         ret.push({text: line, colorClass: party});
     });
+    console.log('loaded ' + ret.length + ' terms from file ' + termsFile);
     return ret;
 }
 
