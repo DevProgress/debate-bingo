@@ -19,13 +19,12 @@ function getRandomSet(arr, len) {
     return ret;
 }
 function getTerms(termsFile, party) {
-    var lineReader = require('readline').createInterface({
-        input: require('fs').createReadStream(termsFile)
-    });
+    var array = fs.readFileSync(termsFile).toString().split("\n");
     var ret = [];
-    lineReader.on('line', function (line) {
+    for(i in array) {
         ret.push({text: line, colorClass: party});
-    });
+    }
+
     console.log('loaded ' + ret.length + ' terms from file ' + termsFile);
     return ret;
 }
