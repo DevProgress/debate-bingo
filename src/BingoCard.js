@@ -16,7 +16,7 @@ export default class BingoCard extends React.Component {
     constructor() {
         super();
         this.state = {
-            rows: [],
+            data: [],
             daubs: BingoCard.clone2DArray(EMPTY_BOARD),
             isBingo: false
         };
@@ -24,7 +24,7 @@ export default class BingoCard extends React.Component {
     }
     componentDidMount() {
         this.loadCard(function(data) {
-            this.setState({rows: data});
+            this.setState({data: data});
         }.bind(this));
     }
     loadCard(onSuccess) {
@@ -33,7 +33,10 @@ export default class BingoCard extends React.Component {
             url: getCardDataUrl,
             dataType: 'json',
             cache: false,
-            success: onSuccess,
+            success: function(data) {
+                data.splice(12, 0, {text: 'Free space!', colorClass: ''});
+                onSuccess(data);
+            },
             error: function(xhr, status, err) {
                 console.error(getCardDataUrl, status, err.toString());
             }.bind(this)
@@ -48,7 +51,8 @@ export default class BingoCard extends React.Component {
                 </p>
             </div>
         );
-        let bingoRows = this.state.rows.map(function(row, i) {
+        let rows = BingoCard.generateRowsFromArray(this.state.data);
+        let bingoRows = rows.map(function(row, i) {
             let key = `row-${i}`;
             return (
                 <BingoRow tiles={row} rowIndex={i} daubs={this.state.daubs} onTileDaubed={this.handleTileDaubed.bind(this, i)} key={key} />
@@ -154,5 +158,12 @@ export default class BingoCard extends React.Component {
         return arr.map(function(row) {
             return row.slice();
         });
+    }
+    static generateRowsFromArray(arr) {
+        let ret = [];
+        for(let i=0; i<5; i++) {
+            ret.push(arr.slice(i*5, (i*5)+5));
+        }
+        return ret;
     }
 }
