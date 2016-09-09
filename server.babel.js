@@ -20,7 +20,7 @@ function getRandomSet(arr, len) {
     return ret;
 }
 function getTerms(termsFile, party) {
-    var array = fs.readFileSync(termsFile).toString().split("\n");
+    var array = fs.readFileSync(termsFile).toString().split(/[\n\r]{1,2}/);
     var ret = [];
     for(i in array) {
         ret.push({text: line, colorClass: party});
