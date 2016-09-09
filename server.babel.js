@@ -33,7 +33,11 @@ function getTerms(termsFile, party) {
 function getCardData(type) {
     var hillary = type === 'hillary';
     var trump = type === 'trump';
-    var mixed = hillary && trump;
+    var mixed = type === 'mixed';
+
+    if(mixed) {
+        hillary = trump = true;
+    }
 
     if(!(hillary || trump)) {
        return null;
