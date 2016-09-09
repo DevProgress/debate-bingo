@@ -22,8 +22,8 @@ function getRandomSet(arr, len) {
 function getTerms(termsFile, party) {
     var array = fs.readFileSync(termsFile).toString().split(/[\n\r]{1,2}/);
     var ret = [];
-    for(var i in array) {
-        ret.push({text: line, colorClass: party});
+    for(var i=0; i<array.length; i++) {
+        ret.push({text: array[i], colorClass: party});
     }
 
     console.log('loaded ' + ret.length + ' terms from file ' + termsFile);
