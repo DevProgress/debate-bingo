@@ -1,8 +1,10 @@
 $democratBlue: #00a;
 $republicanRed: #800;
+$highlightBlue: #0C5AB5;
 
 body {
     font-family: Helvetica, Arial, sans-serif;
+    background: #F3F3F3;
 }
 table {
     width: 100%;
@@ -39,4 +41,55 @@ td {
 }
 .republican {
     border-color: $republicanRed;
+}
+
+.blue-header {
+    margin: 18px 0;
+    span {
+        background: $highlightBlue;
+        color: white;
+        padding: 8px;
+    }
+}
+
+.instructions {
+    margin-top: 30px;
+}
+
+.homepage-button-wrapper {
+    list-style: none;
+    padding: 0px;
+    .homepage-button {
+        display: block;
+        background: white;
+        width: 250px;
+        height: 60px;
+        margin: 5px;
+        #mixed {
+            img {
+                padding: 15px 8px;
+            }
+            span {
+                padding: 6px;
+            }
+        }
+        #hillary, #trump {
+            span {
+                padding-left: 18px;
+            }
+        }
+        a {
+            text-decoration: none;
+            color: black;
+            img {
+                padding: 5px;
+            }
+            span {
+                padding: 15px;
+                display: inline-block;
+                margin-bottom: 40px;
+                vertical-align: middle;
+            }
+        }
+    }
 }
