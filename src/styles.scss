@@ -1,6 +1,8 @@
 $democratBlue: #00a;
 $republicanRed: #800;
 $highlightBlue: #0C5AB5;
+$lightBlue: #2AADDF;
+$lightGrey: #CCCCCC;
 
 body {
     font-family: Helvetica, Arial, sans-serif;
@@ -10,14 +12,15 @@ table {
     width: 100%;
     border-spacing: 0;
     border-collapse: collapse;
+    background: white;
 }
 th {
     font-size: 2em;
 }
 td {
-    border: 1px solid transparent;
-    width: 20vw;
-    height: 20vw;
+    border: 1px solid $lightGrey;
+    width: 80px;
+    height: 80px;
     text-align: center;
     vertical-align: middle;
 }
@@ -31,16 +34,20 @@ td {
 }
 .daubed {
     // TODO: make better daub marker
-    background-color: red;
+    background-color: $lightGrey;
 }
 .highlighted {
     background-color: coral;
 }
 .democrat {
-    border-color: $democratBlue
+    border-top: 4px solid $democratBlue;
 }
 .republican {
-    border-color: $republicanRed;
+    border-top: 4px solid $republicanRed;
+}
+
+.free-square {
+    font-size: 12px;
 }
 
 .blue-header {
@@ -91,5 +98,40 @@ td {
                 vertical-align: middle;
             }
         }
+    }
+}
+
+.bingo-card-wrapper {
+    width: 400px;
+}
+
+.bingo-card-header {
+    background: white;
+    height: 40px;
+    width: 100%;
+    margin-bottom: 20px;
+    a {
+        background: $lightBlue;
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 5px;
+        padding: 6px 8px;
+        float: right;
+        margin: 5px;
+    }
+}
+
+.card-name {
+    width: 100%;
+    text-align: center;
+    img {
+        margin-right: 10px;
+    }
+    span {
+        margin-bottom: 30px;
+        display: inline-block;
+        vertical-align: middle;
     }
 }
