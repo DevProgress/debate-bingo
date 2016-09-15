@@ -58,18 +58,28 @@ export default class BingoCard extends React.Component {
                 <BingoRow tiles={row} rowIndex={i} daubs={this.state.daubs} onTileDaubed={this.handleTileDaubed.bind(this, i)} key={key} />
             );
         }.bind(this));
+        let imagePath = `images/${this.props.type}.png`,
+            cardName;
+        if (this.props.type === 'hillary') {
+            cardName = 'Hillary Clinton';
+        } else if (this.props.type === 'trump') {
+            cardName = 'Donald Trump';
+        } else {
+            cardName = 'Hillary & Donald Mix';
+        }
+        let header = (
+            <div className="card-name">
+                <img src={imagePath} />
+                <span>{cardName}</span>
+            </div>
+        );
         return (
-            <div>
+            <div className="bingo-card-wrapper">
+                <div className="bingo-card-header">
+                    <a href="#" onClick={this.props.onPlayAgainRequested}>Play new card</a>
+                </div>
+                {header}
                 <table>
-                    <thead>
-                        <tr>
-                            <th>B</th>
-                            <th>I</th>
-                            <th>N</th>
-                            <th>G</th>
-                            <th>O</th>                        
-                        </tr>
-                    </thead>
                     <tbody>
                         {bingoRows}
                     </tbody>
