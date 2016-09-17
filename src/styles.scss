@@ -32,6 +32,21 @@ td {
     height: 100%;
     border: 0;
 }
+.bingoOverlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-top: 40%;
+    text-align: center;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    a {
+       color: white;
+    }
+}
 .daubed {
     // TODO: make better daub marker
     background-color: $lightGrey;
