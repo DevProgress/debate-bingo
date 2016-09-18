@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import autoBind from 'react-autobind';
+import Footer from './components/Footer';
 
 export default class WelcomePage extends React.Component {
     constructor() {
@@ -36,6 +37,7 @@ export default class WelcomePage extends React.Component {
                         </a>
                     </li>
                 </ul>
+                <Footer heading="Share Debate Bingo!" title="Debate Bingo!"/>
             </div>
         );
     }
