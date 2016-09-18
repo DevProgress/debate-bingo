@@ -38,7 +38,7 @@ td {
     bottom: 0;
     left: 0;
     right: 0;
-    padding-top: 40%;
+    padding-top: 2 em;
     text-align: center;
     z-index: 10;
     background-color: rgba(0,0,0,0.8);
@@ -46,6 +46,15 @@ td {
     a {
        color: white;
     }
+}
+.bingoImageOverlay {
+    margin: auto;
+    width: 85%;
+}
+
+.bingoImage {
+    max-width: 100%;
+    max-height: 100%;
 }
 .daubed {
     // TODO: make better daub marker
