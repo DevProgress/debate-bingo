@@ -51,7 +51,7 @@ export default class BingoCard extends React.Component {
                     <a href="#" onClick={this.props.onPlayAgainRequested}>Play again</a>
                 </p>
                 <div className="bingoImageOverlay">
-                    <img src={bingoImagePath} className="bingoImage" alt="image of the candidate you choose" />
+                    <img src={bingoImagePath} className="bingoImage" alt="image of the candidate you chose" />
                 </div>
             </div>
         );
