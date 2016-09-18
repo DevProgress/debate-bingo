@@ -51,6 +51,7 @@
     "rimraf": "^2.5.4",
     "sass": "^0.5.0",
     "sass-loader": "^4.0.0",
-    "es6-promise": "~3.3.1"
+    "es6-promise": "~3.3.1",
+    "react-share": "~1.10.0"
   }
 }
