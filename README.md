@@ -13,12 +13,17 @@ Debate bingo is a simple mobile web app built with Node.js on the server and Rea
 * [Git](https://git-scm.com)
 * [Heroku CLI](https://cli.heroku.com/)
 
+To install the dependencies, run
+
+    npm install
+
+
 #### Commands
 To build and watch, run
 
     npm run dev
 
-This will build the app using WebPack and run a local server with a watch, so edits to JS and Sass files will trigger a rebuild.
+This will build the app using WebPack and run a local server at `http://localhost:3000` with a watch, so edits to JS and Sass files will trigger a rebuild.
 
 ### People
 * Jonathan Keslin (@JonathanKeslin) is the lead developer
