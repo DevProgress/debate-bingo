@@ -44,7 +44,6 @@ export default class BingoCard extends React.Component {
     }
     render() {
         let bingoImagePath = `images/${this.props.type}_win_sq_resized.png`;
-        console.log(bingoImagePath);
         let bingoOverlay = !this.state.isBingo ? null : (
             <div className="bingoOverlay">
                 <h2>Bingo!</h2>
@@ -52,7 +51,7 @@ export default class BingoCard extends React.Component {
                     <a href="#" onClick={this.props.onPlayAgainRequested}>Play again</a>
                 </p>
                 <div className="bingoImageOverlay">
-                    <img src={bingoImagePath} className="bingoImage" alt="image of Hillary Clinton" />
+                    <img src={bingoImagePath} className="bingoImage" alt="image of the candidate you choose" />
                 </div>
             </div>
         );
