@@ -5,6 +5,21 @@ $highlightBlue: #0C5AB5;
 $lightBlue: #2AADDF;
 $lightGrey: #CCCCCC;
 
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    background: #F3F3F3;
+    font-size: 1.3em;
+    padding: 1em;
+}
+
+html {
+    font-size: x-small;
+}
+
+td {
+    height: 4em;
+}
+
 @media (min-width: 320px) {
   html {
     font-size: small;
@@ -12,15 +27,21 @@ $lightGrey: #CCCCCC;
   td {
     height: 4em;
   }
+  body {
+    padding: 0.3em;
+  }
 }
 
 @media (min-width: 768px) {
   html {
     font-size: medium;
   }
+  body {
+    width: 730px;
+    margin: 0 auto;
+  }
   td {
     height: 3em;
-    font-size: 2em;
   }
 }
 
@@ -28,16 +49,12 @@ $lightGrey: #CCCCCC;
   html {
     font-size: large;
   }
-  body {
-    width: 768px;
-    margin: 0 auto;
-  }
   td {
     height: 5em;
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1600px) {
   html {
     font-size: x-large;
   }
@@ -47,12 +64,6 @@ $lightGrey: #CCCCCC;
   }
 }
 
-body {
-    font-family: Helvetica, Arial, sans-serif;
-    background: #F3F3F3;
-    font-size: 1.3em;
-    padding: 1em;
-}
 table {
     width: 100%;
     border-spacing: 0;
@@ -73,7 +84,9 @@ td {
     background: none;
     width: 100%;
     height: 100%;
-    border: 0;
+    border: none;
+    padding: 0.1em;
+    font-size: 0.5em;
 }
 .bingoOverlay {
     position: fixed;
@@ -118,7 +131,7 @@ td {
 }
 
 .free-square {
-    font-size: 12px;
+    font-size: 0.6em;
     border-top: 0.3em solid $lightGrey;
 }
 
