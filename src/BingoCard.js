@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import autoBind from 'react-autobind';
 import BingoRow from './BingoRow';
+import Footer from './components/Footer'
 
 const CARD_DATA_API = "api/getCardData";
 const EMPTY_BOARD = [
@@ -53,6 +54,7 @@ export default class BingoCard extends React.Component {
                 <div className="bingoImageOverlay">
                     <img src={bingoImagePath} className="bingoImage" alt="image of the candidate you chose" />
                 </div>
+                <Footer heading="Share Debate Bingo" title="Bingo! I won at debate bingo!"/>
             </div>
         );
         let rows = BingoCard.generateRowsFromArray(this.state.data);
