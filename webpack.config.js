@@ -20,6 +20,10 @@ module.exports = {
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract('css!sass')
+      },
+      {
+        test: /\.png$/,
+        loader: "url-loader?mimetype=image/png"
       }
     ]
   },
@@ -39,6 +43,6 @@ module.exports = {
     }),
   ],
   resolve: {
-    extensions: ['', '.js', '.json'] 
+    extensions: ['', '.js', '.json']
   }
 };

@@ -18,23 +18,14 @@ export default class WelcomePage extends React.Component {
                     <span>(You can only play one card at a time)</span>
                 </div>
                 <ul className="homepage-button-wrapper">
-                    <li className="democrat homepage-button">
-                        <a href="#" onClick={this.selectCard} id="hillary">
-                            <img src="images/hillary.png" alt="Image of Hillary Clinton" />
-                            <span>Hillary Clinton</span>
-                        </a>
+                    <li>
+                        <a href="#" onClick={this.selectCard} id="hillary">Hillary Clinton</a>
                     </li>
-                    <li className="republican homepage-button">
-                        <a href="#" onClick={this.selectCard} id="trump">
-                            <img src="images/trump.png" alt="Image of Donald Trump" />
-                            <span>Donald Trump</span>
-                        </a>
+                    <li>
+                        <a href="#" onClick={this.selectCard} id="trump">Donald Trump</a>
                     </li>
-                    <li className="mixed homepage-button">
-                        <a href="#" onClick={this.selectCard} id="mixed">
-                            <img src="images/mixed.png" alt="Image of Hillary Clinton and Donald Trump" />
-                            <span>Hillary &amp; Donald Mix</span>
-                        </a>
+                    <li>
+                        <a href="#" onClick={this.selectCard} id="mixed">Hillary &amp; Donald Mix</a>
                     </li>
                 </ul>
                 <Footer heading="Share Debate Bingo!" title="Debate Bingo!"/>
