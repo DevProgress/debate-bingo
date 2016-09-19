@@ -5,6 +5,38 @@ $highlightBlue: #0C5AB5;
 $lightBlue: #2AADDF;
 $lightGrey: #CCCCCC;
 
+@media (min-width: 320px) {
+  html {
+    font-size: small;
+  }
+  td {
+    height: 4em;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: medium;
+  }
+  td {
+    height: 3em;
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: large;
+  }
+  body {
+    width: 768px;
+    margin: 0 auto;
+  }
+  td {
+    height: 5em;
+  }
+}
+
 @media (min-width: 1000px) {
   html {
     font-size: x-large;
@@ -12,38 +44,6 @@ $lightGrey: #CCCCCC;
   td {
     width: 5em;
     height: 5em;
-  }
-}
-
-@media (min-width: 768px) {
-  body {
-    width: 768px;
-    margin: 0 auto;
-  }
-  td {
-    width: 5em;
-    height: 5em;
-  }
-}
-
-@media (max-width: 768px) {
-  html {
-    font-size: medium;
-  }
-  td {
-    width: 3em;
-    height: 3em;
-    font-size: 2em;
-  }
-}
-
-@media (max-width: 320px) {
-  html {
-    font-size: small;
-  }
-  td {
-    width: 2em;
-    height: 2em;
   }
 }
 
@@ -63,7 +63,7 @@ th {
     font-size: 2em;
 }
 td {
-    border-left: 1px solid $lightGrey;
+    border: 1px solid $lightGrey;
     text-align: center;
     vertical-align: middle;
 }
