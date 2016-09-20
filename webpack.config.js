@@ -39,6 +39,6 @@ module.exports = {
     }),
   ],
   resolve: {
-    extensions: ['', '.js', '.json'] 
+    extensions: ['', '.js', '.json']
   }
 };

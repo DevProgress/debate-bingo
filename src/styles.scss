@@ -1,5 +1,6 @@
 $democratBlue: #00a;
 $republicanRed: #800;
+$neutralGrey: #666;
 $highlightBlue: #0C5AB5;
 $lightBlue: #2AADDF;
 $lightGrey: #CCCCCC;
@@ -7,22 +8,71 @@ $lightGrey: #CCCCCC;
 body {
     font-family: Helvetica, Arial, sans-serif;
     background: #F3F3F3;
+    font-size: 1.3em;
+    padding: 1em;
 }
+
+html {
+    font-size: x-small;
+}
+
+td {
+    height: 4em;
+    border: 1px solid $lightGrey;
+    text-align: center;
+    vertical-align: middle;
+    width: 20%;
+}
+
+@media (min-width: 320px) {
+    html {
+        font-size: small;
+    }
+    td {
+        height: 4em;
+    }
+    body {
+        padding: 0.3em;
+    }
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: medium;
+    }
+    body {
+        width: 730px;
+        margin: 0 auto;
+    }
+    td {
+        height: 3em;
+    }
+}
+
+@media (min-width: 1024px) {
+    html {
+        font-size: large;
+    }
+    td {
+        height: 5em;
+    }
+}
+
+@media (min-width: 1600px) {
+    html {
+        font-size: x-large;
+    }
+    td {
+        width: 5em;
+        height: 5em;
+    }
+}
+
 table {
     width: 100%;
     border-spacing: 0;
     border-collapse: collapse;
     background: white;
-}
-th {
-    font-size: 2em;
-}
-td {
-    border: 1px solid $lightGrey;
-    width: 80px;
-    height: 80px;
-    text-align: center;
-    vertical-align: middle;
 }
 .bingoTile {
     text-align: center;
@@ -30,7 +80,11 @@ td {
     background: none;
     width: 100%;
     height: 100%;
-    border: 0;
+    border: none;
+    padding: 0.1em;
+}
+.bingoTile, .free-square {
+    font-size: 0.5em;
 }
 .bingoOverlay {
     position: fixed;
@@ -38,7 +92,7 @@ td {
     bottom: 0;
     left: 0;
     right: 0;
-    padding-top: 2 em;
+    padding-top: 2em;
     text-align: center;
     z-index: 10;
     background-color: rgba(0,0,0,0.8);
@@ -63,15 +117,15 @@ td {
 .highlighted {
     background-color: coral;
 }
-.democrat {
-    border-top: 4px solid $democratBlue;
+.democrat, #hillary {
+    border-top: 0.3em solid $democratBlue;
 }
-.republican {
-    border-top: 4px solid $republicanRed;
+.republican, #trump {
+    border-top: 0.3em solid $republicanRed;
 }
 
-.free-square {
-    font-size: 12px;
+.mixed, #mixed {
+    border-top: 0.3em solid $neutralGrey;
 }
 
 .blue-header {
@@ -89,44 +143,42 @@ td {
 
 .homepage-button-wrapper {
     list-style: none;
+    margin: 0;
     padding: 0px;
-    .homepage-button {
-        display: block;
-        background: white;
-        width: 250px;
-        height: 60px;
-        margin: 5px;
-        #mixed {
-            img {
-                padding: 15px 8px;
-            }
-            span {
-                padding: 6px;
-            }
-        }
-        #hillary, #trump {
-            span {
-                padding-left: 18px;
-            }
-        }
+    li {
+        padding: 0.7em 0 0 0;
         a {
+            padding: 1em;
             text-decoration: none;
             color: black;
+            display: block;
+            height: 2.5em;
             img {
-                padding: 5px;
+                display: block;
+                float: left;
             }
             span {
-                padding: 15px;
                 display: inline-block;
-                margin-bottom: 40px;
-                vertical-align: middle;
+                padding-left: 0.5em;
             }
         }
+        a#mixed {
+            img {
+                padding-top: 10px; /* compensate for odd image size */
+            }
+        }
+        a:before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+        a:after {
+            clear: both;
+            content: '';
+            display: table;
+        }
     }
-}
-
-.bingo-card-wrapper {
-    width: 400px;
 }
 
 .bingo-card-header {
