@@ -18,50 +18,54 @@ html {
 
 td {
     height: 4em;
+    border: 1px solid $lightGrey;
+    text-align: center;
+    vertical-align: middle;
+    width: 20%;
 }
 
 @media (min-width: 320px) {
-  html {
-    font-size: small;
-  }
-  td {
-    height: 4em;
-  }
-  body {
-    padding: 0.3em;
-  }
+    html {
+        font-size: small;
+    }
+    td {
+        height: 4em;
+    }
+    body {
+        padding: 0.3em;
+    }
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: medium;
-  }
-  body {
-    width: 730px;
-    margin: 0 auto;
-  }
-  td {
-    height: 3em;
-  }
+    html {
+        font-size: medium;
+    }
+    body {
+        width: 730px;
+        margin: 0 auto;
+    }
+    td {
+        height: 3em;
+    }
 }
 
 @media (min-width: 1024px) {
-  html {
-    font-size: large;
-  }
-  td {
-    height: 5em;
-  }
+    html {
+        font-size: large;
+    }
+    td {
+        height: 5em;
+    }
 }
 
 @media (min-width: 1600px) {
-  html {
-    font-size: x-large;
-  }
-  td {
-    width: 5em;
-    height: 5em;
-  }
+    html {
+        font-size: x-large;
+    }
+    td {
+        width: 5em;
+        height: 5em;
+    }
 }
 
 table {
@@ -69,14 +73,6 @@ table {
     border-spacing: 0;
     border-collapse: collapse;
     background: white;
-}
-th {
-    font-size: 2em;
-}
-td {
-    border: 1px solid $lightGrey;
-    text-align: center;
-    vertical-align: middle;
 }
 .bingoTile {
     text-align: center;
@@ -86,6 +82,8 @@ td {
     height: 100%;
     border: none;
     padding: 0.1em;
+}
+.bingoTile, .free-square {
     font-size: 0.5em;
 }
 .bingoOverlay {
@@ -130,11 +128,6 @@ td {
     border-top: 0.3em solid $neutralGrey;
 }
 
-.free-square {
-    font-size: 0.6em;
-    border-top: 0.3em solid $lightGrey;
-}
-
 .blue-header {
     margin: 18px 0;
     span {
@@ -155,22 +148,35 @@ td {
     li {
         padding: 0.7em 0 0 0;
         a {
-            padding: 1em 1em 1em 3.5em;
+            padding: 1em;
             text-decoration: none;
-            background-color: white;
-            background-position: 0.5em center;
-            background-repeat: no-repeat;
             color: black;
             display: block;
+            height: 2.5em;
+            img {
+                display: block;
+                float: left;
+            }
+            span {
+                display: inline-block;
+                padding-left: 0.5em;
+            }
         }
-        #hillary {
-            background-image: url(images/hillary.png);
+        a#mixed {
+            img {
+                padding-top: 10px; /* compensate for odd image size */
+            }
         }
-        #trump {
-            background-image: url(images/trump.png);
+        a:before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
         }
-        #mixed {
-            background-image: url(images/mixed.png);
+        a:after {
+            clear: both;
+            content: '';
+            display: table;
         }
     }
 }

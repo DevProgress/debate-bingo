@@ -19,13 +19,22 @@ export default class WelcomePage extends React.Component {
                 </div>
                 <ul className="homepage-button-wrapper">
                     <li>
-                        <a href="#" onClick={this.selectCard} id="hillary">Hillary Clinton</a>
+                        <a href="#" onClick={this.selectCard} id="hillary">
+                            <img src="images/hillary.png" alt="Image of Hillary Clinton" />
+                            <span>Hillary Clinton</span>
+                        </a>
                     </li>
                     <li>
-                        <a href="#" onClick={this.selectCard} id="trump">Donald Trump</a>
+                        <a href="#" onClick={this.selectCard} id="trump">
+                            <img src="images/trump.png" alt="Image of Donald Trump" />
+                            <span>Donald Trump</span>
+                        </a>
                     </li>
                     <li>
-                        <a href="#" onClick={this.selectCard} id="mixed">Hillary &amp; Donald Mix</a>
+                        <a href="#" onClick={this.selectCard} id="mixed">
+                            <img src="images/mixed.png" alt="Image of Hillary Clinton and Donald Trump" />
+                            <span>Hillary &amp; Donald Mix</span>
+                        </a>
                     </li>
                 </ul>
                 <Footer heading="Share Debate Bingo!" title="Debate Bingo!"/>
