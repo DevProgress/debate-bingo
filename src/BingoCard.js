@@ -13,6 +13,137 @@ const EMPTY_BOARD = [
     [0, 0, 0, 0, 0]
 ];
 
+const hillaryData = [
+"Yes we can",
+"Everyone",
+"Human rights",
+"Immigration reform",
+"Unions",
+"Equality",
+"Obamacare",
+"Proud",
+"Leadership",
+"Diplomacy",
+"Secretary of State",
+"Senator",
+"Diverse",
+"Fair share",
+"Shared values",
+"Clean energy",
+"Tomorrow",
+"The future",
+"Work together",
+"Working families",
+"Pathway to citizenship",
+"Debt free college",
+"Better together",
+"Fair wages",
+"Living wage",
+"Equal pay",
+"Paid leave",
+"Renewable energy",
+"American dream",
+"Climate change",
+"Affordable medicine",
+"Right to vote",
+"Voting rights act",
+"Supreme court",
+"Across the aisle",
+"Women's rights",
+"Glass ceiling",
+"Infrastructure",
+"Workforce",
+"Middle class",
+"It takes a village",
+"Defeat ISIS",
+"Prosperity",
+"Diplomacy",
+"Reproductive health",
+"Opportunity",
+"Education",
+"Small business",
+"Black lives matter",
+"LGBT",
+"President Obama",
+"Affordable health care",
+"Social security",
+"Quality"];
+
+const trumpData = [
+"Believe me",
+"Tremendous",
+"Yuge",
+"Many people",
+"Losers",
+"Wall",
+"Businessman",
+"Disgrace",
+"Catastrophe",
+"Muslims",
+"Big league",
+"Crooks",
+"We're getting screwed",
+"Make America great again",
+"The best",
+"Trump university",
+"Melania",
+"Ivanka",
+"My hands",
+"Fraud",
+"Abuse",
+"The media",
+"Winning",
+"I'm (very) rich",
+"We don't win anymore",
+"You're disgusting",
+"You'll never get bored",
+"Ivy league",
+"The woman card",
+"Putin",
+"Stupid",
+"Law and order",
+"Incompetence",
+"Stupidity",
+"The worst",
+"Weak",
+"Mexicans",
+"Not our friend",
+"Like a dog",
+"Ego",
+"No amnesty",
+"Deport/deportation",
+"Haters",
+"You're fired",
+"Failed policy(ies)",
+"Politically correct",
+"Bad deal",
+"Morons",
+"My hair",
+"Rigged election",
+"Mental breakdown",
+"Stamina",
+"Illegal immigrants",
+"Bernie",
+"Dangerous",
+"Lightweight",
+"Big crowds",
+"Amazing",
+"Terrific",
+"Thoughts and prayers",
+"Trump",
+"Zero",
+"Big problem",
+"Out of control",
+"Insiders",
+"Sabotage",
+"Wall St.",
+"Classy",
+"Ashamed",
+"Only I can",
+"Neurotic",
+"Fed up",
+"Brexit"];
+
 export default class BingoCard extends React.Component {
     constructor() {
         super();
@@ -29,6 +160,43 @@ export default class BingoCard extends React.Component {
         }.bind(this));
     }
     loadCard(onSuccess) {
+        function getRandomSet(arr, len) {
+            if(len > arr.length) {
+                throw 'len cannot exceed length of arr';
+            }
+            var ret = [];
+            var used = [];
+            for(var i=0; i<len; i++) {
+                var idx;
+                do {
+                    idx = Math.floor(Math.random() * arr.length);
+                } while(used.indexOf(idx) !== -1);
+                used.push(idx);
+                ret.push(arr[idx]);
+            }
+            return ret;
+        }
+        var cardData = [];
+        if ((this.props.type == 'hillary') || (this.props.type == 'mixed')) {
+            var cardTerms = hillaryData;
+            for(var i=0; i<cardTerms.length; i++) {
+                if(cardTerms[i] && !cardTerms[i].match(/^[\s]*$/)) {
+                    cardData.push({text: cardTerms[i], colorClass: 'democrat'});
+                }
+            }
+        }
+        if ((this.props.type == 'trump') || (this.props.type == 'mixed')){
+            var cardTerms = trumpData;
+            for(var i=0; i<cardTerms.length; i++) {
+                if(cardTerms[i] && !cardTerms[i].match(/^[\s]*$/)) {
+                    cardData.push({text: cardTerms[i], colorClass: 'republican'});
+                }
+            }
+        }
+        var chosenTerms = getRandomSet(cardData, 24);
+        chosenTerms.splice(12, 0, {text: 'Free space!', colorClass: ''});
+        onSuccess(chosenTerms);
+        /*
         let getCardDataUrl = `${CARD_DATA_API}/${this.props.type}`;
         $.ajax({
             url: getCardDataUrl,
@@ -42,6 +210,7 @@ export default class BingoCard extends React.Component {
                 console.error(getCardDataUrl, status, err.toString());
             }.bind(this)
         });
+        */
     }
     render() {
         let bingoImagePath = `images/${this.props.type}_win_sq_resized.png`;
