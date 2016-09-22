@@ -30,12 +30,6 @@ export default class WelcomePage extends React.Component {
                             <span>Donald Trump</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#" onClick={this.selectCard} id="mixed">
-                            <img src="images/mixed.png" alt="Image of Hillary Clinton and Donald Trump" />
-                            <span>Hillary &amp; Donald Mix</span>
-                        </a>
-                    </li>
                 </ul>
                 <Footer heading="Share Debate Bingo!" title="Debate Bingo!"/>
             </div>
