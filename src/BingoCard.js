@@ -196,21 +196,6 @@ export default class BingoCard extends React.Component {
         var chosenTerms = getRandomSet(cardData, 24);
         chosenTerms.splice(12, 0, {text: 'Free space!', colorClass: ''});
         onSuccess(chosenTerms);
-        /*
-        let getCardDataUrl = `${CARD_DATA_API}/${this.props.type}`;
-        $.ajax({
-            url: getCardDataUrl,
-            dataType: 'json',
-            cache: false,
-            success: function(data) {
-                data.splice(12, 0, {text: 'Free space!', colorClass: ''});
-                onSuccess(data);
-            },
-            error: function(xhr, status, err) {
-                console.error(getCardDataUrl, status, err.toString());
-            }.bind(this)
-        });
-        */
     }
     render() {
         let bingoImagePath = `images/${this.props.type}_win_sq_resized.png`;
