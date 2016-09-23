@@ -20,13 +20,13 @@ export default class WelcomePage extends React.Component {
                 <ul className="homepage-button-wrapper">
                     <li>
                         <a href="#" onClick={this.selectCard} id="hillary">
-                            <img src="images/hillary.png" alt="Image of Hillary Clinton" />
+                            <img src="images/hillary-2x.png" alt="Image of Hillary Clinton" />
                             <span>Hillary Clinton</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" onClick={this.selectCard} id="trump">
-                            <img src="images/trump.png" alt="Image of Donald Trump" />
+                            <img src="images/trump-2x.png" alt="Image of Donald Trump" />
                             <span>Donald Trump</span>
                         </a>
                     </li>
