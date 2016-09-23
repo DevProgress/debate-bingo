@@ -25,6 +25,12 @@ To build and watch, run
 
 This will build the app using WebPack and run a local server at `http://localhost:3000` with a watch, so edits to JS and Sass files will trigger a rebuild.
 
+To deploy:
+
+1. Run `npm run webpack-prod` to generate the app using WebPack
+2. If there are any changes in the `/dist` dir (check with `git status`), commit and push them.
+3. Run `npm run deploy` to push current contents of the `dist` dir to the `gh-pages` branch.
+
 ### People
 * Jonathan Keslin (@JonathanKeslin) is the lead developer
 * Michelle Keslin is the lead product manager
