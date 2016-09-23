@@ -10,26 +10,22 @@ const {
   GooglePlusShareButton,
   LinkedinShareButton,
   TwitterShareButton,
-  PinterestShareButton,
 } = ShareButtons;
 
 const {
   FacebookShareCount,
   GooglePlusShareCount,
   LinkedinShareCount,
-  PinterestShareCount,
 } = ShareCounts;
 
 const FacebookIcon = generateShareIcon('facebook');
 const TwitterIcon = generateShareIcon('twitter');
 const GooglePlusIcon = generateShareIcon('google');
 const LinkedinIcon = generateShareIcon('linkedin');
-const PinterestIcon = generateShareIcon('pinterest');
 
 export default class Social extends Component {
   render() {
     const shareUrl = window.location.href.split('#')[0]
-    const media = shareUrl + "images/mixed.png"
 
     return (
       <div className="social-icons-bar">
@@ -88,21 +84,6 @@ export default class Social extends Component {
             {count => count}
           </LinkedinShareCount>}
 
-        </div>
-
-        <div className="social-media">
-          <PinterestShareButton
-            url={shareUrl}
-            media={media}
-            title={this.props.title}
-            className="share-button">
-            <PinterestIcon className="desktop" size={50} round />
-          </PinterestShareButton>
-          {<PinterestShareCount
-            url={shareUrl}
-            className="share-count">
-            {count => count}
-          </PinterestShareCount>}
         </div>
       </div>
     );
