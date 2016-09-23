@@ -84,7 +84,7 @@ table {
     padding: 0.1em;
 }
 .bingoTile, .free-square {
-    font-size: 0.5em;
+    font-size: 0.875em;
 }
 .bingoOverlay {
     position: fixed;
@@ -92,7 +92,7 @@ table {
     bottom: 0;
     left: 0;
     right: 0;
-    padding-top: 2em;
+    padding-top: 1em;
     text-align: center;
     z-index: 10;
     background-color: rgba(0,0,0,0.8);
@@ -104,6 +104,7 @@ table {
 .bingoImageOverlay {
     margin: auto;
     width: 85%;
+    height: 60%;
 }
 
 .bingoImage {
@@ -230,7 +231,7 @@ table {
 }
 
 .social-icons-bar {
-  margin-top: 35px;
+  margin-top: 5px;
 }
 
 .share-button {

@@ -198,7 +198,7 @@ export default class BingoCard extends React.Component {
         onSuccess(chosenTerms);
     }
     render() {
-        let bingoImagePath = `images/${this.props.type}_win_sq_resized.png`;
+        let bingoImagePath = `images/${this.props.type}_win_sq_600x600.png`;
         let bingoOverlay = !this.state.isBingo ? null : (
             <div className="bingoOverlay">
                 <h2>Bingo!</h2>
