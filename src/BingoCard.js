@@ -322,6 +322,7 @@ export default class BingoCard extends React.Component {
                 newDaubs[r][c] = 2;
             }
         }
+        ga('send', 'event', 'bingoCard', 'bingo', this.props.type);
         this.setState({daubs: newDaubs, isBingo: true});
     }
     static clone2DArray(arr) {
