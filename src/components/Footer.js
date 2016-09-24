@@ -35,7 +35,7 @@ export default class Social extends Component {
         <div className="social-media">
           <TwitterShareButton
             url={shareUrl}
-            title={this.props.title}
+            title={this.props.shortTitle}
             className="share-button">
             <TwitterIcon className="desktop" size={50} round />
           </TwitterShareButton>
