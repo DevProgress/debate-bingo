@@ -206,7 +206,7 @@ export default class BingoCard extends React.Component {
                     <a href="#" onClick={this.props.onPlayAgainRequested}>Play again</a>
                 </p>
                 <div className="bingoImageOverlay">
-                    <img src={bingoImagePath} className="bingoImage" alt="image of the candidate you chose" />
+                    <img src={bingoImagePath} className="bingoImage" alt={"Image of " + this.props.type} />
                 </div>
                 <Footer heading="Share your victory!" title="Bingo! I won at debate bingo!"/>
             </div>
@@ -218,7 +218,7 @@ export default class BingoCard extends React.Component {
                 <BingoRow tiles={row} rowIndex={i} daubs={this.state.daubs} onTileDaubed={this.handleTileDaubed.bind(this, i)} key={key} />
             );
         }.bind(this));
-        let imagePath = `images/${this.props.type}.png`,
+        let imagePath = `images/${this.props.type}-2x.png`,
             cardName;
         if (this.props.type === 'hillary') {
             cardName = 'Hillary Clinton';
@@ -229,7 +229,7 @@ export default class BingoCard extends React.Component {
         }
         let header = (
             <div className="card-name">
-                <img src={imagePath} />
+                <img src={imagePath} alt={"Image of " + cardName} />
                 <span>{cardName}</span>
             </div>
         );
