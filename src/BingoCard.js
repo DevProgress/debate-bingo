@@ -208,7 +208,7 @@ export default class BingoCard extends React.Component {
                 <div className="bingoImageOverlay">
                     <img src={bingoImagePath} className="bingoImage" alt="image of the candidate you chose" />
                 </div>
-                <Footer heading="Share your victory!" title="Bingo! I won at debate bingo!"/>
+                <Footer heading="Share your victory!" title="I won at debate bingo! Make watching the presidential debate more fun! Play bingo with the common phrases Hillary and Trump will say during the debate and tweet along with #2016debatebingo www.presidentialdebatebingo.com" shortTitle="I won at debate bingo! Play bingo with what Hillary &amp; Trump say! Tweet along with #2016debatebingo www.presidentialdebatebingo.com"/>
             </div>
         );
         let rows = BingoCard.generateRowsFromArray(this.state.data);
