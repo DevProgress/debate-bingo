@@ -33,24 +33,28 @@ export default class Social extends Component {
           {this.props.heading}
         </div>
         <div className="social-media">
+        <div onClick={() => {ga('send', 'event', 'share', 'share', 'twitter');}}>
           <TwitterShareButton
             url={shareUrl}
             title={this.props.shortTitle}
             className="share-button">
             <TwitterIcon className="desktop" size={50} round />
           </TwitterShareButton>
+          </div>
           {<div className="share-count">
             &nbsp;
           </div>}
         </div>
 
         <div className="social-media">
+        <div onClick={() => {ga('send', 'event', 'share', 'share', 'facebook');}}>
           <FacebookShareButton
             url={shareUrl}
             title={this.props.title}
             className="share-button">
             <FacebookIcon className="desktop" size={50} round />
           </FacebookShareButton>
+          </div>
           {<FacebookShareCount
             url={shareUrl}
             className="share-count">
@@ -59,11 +63,13 @@ export default class Social extends Component {
         </div>
 
         <div className="social-media">
+        <div onClick={() => {ga('send', 'event', 'share', 'share', 'googlePlus');}}>
           <GooglePlusShareButton
             url={shareUrl}
             className="share-button">
             <GooglePlusIcon className="desktop" size={50} round />
           </GooglePlusShareButton>
+          </div>
           {<GooglePlusShareCount
             url={shareUrl}
             className="share-count">
@@ -72,12 +78,14 @@ export default class Social extends Component {
         </div>
 
         <div className="social-media">
+        <div onClick={() => {ga('send', 'event', 'share', 'share', 'linkedIn');}}>
           <LinkedinShareButton
             url={shareUrl}
             title={this.props.title}
             className="share-button">
             <LinkedinIcon className="desktop" size={50} round />
           </LinkedinShareButton>
+          </div>
           {<LinkedinShareCount
             url={shareUrl}
             className="share-count">
