@@ -11,7 +11,6 @@ Debate bingo is a simple mobile web app built with Node.js on the server and Rea
 #### Prerequisites
 * [Node.js](https://nodejs.org)
 * [Git](https://git-scm.com)
-* [Heroku CLI](https://cli.heroku.com/)
 
 Fork the repo and work on your own copy.
 
@@ -42,7 +41,7 @@ It might take 15m or more for that page to update after you've pushed.
 
 ## Troubleshooting
 Most problems can be solved by running ``npm install``. Make sure you're in the
-base debate-bingo direcory, not the src direcfory.
+base debate-bingo directory, not the src direcfory.
 
 Check your node version with ``node -v``. If it's a 0.10 version, update using
 instructions at https://nodejs.org/en/download/package-manager/
