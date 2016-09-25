@@ -9,12 +9,14 @@ body {
     font-family: Helvetica, Arial, sans-serif;
     background: #F3F3F3;
     font-size: 1.3em;
-    padding: 1em;
+    /*padding: 1em;*/
+    padding: 0em;
+    margin: 0 auto;
 }
 
 html {
     font-size: x-small;
-}
+}*/0
 
 td {
     height: 4em;
@@ -32,7 +34,12 @@ td {
         height: 4em;
     }
     body {
-        padding: 0.3em;
+       /*padding: 0.3em;*/
+    }
+    .bingoTile, .free-square {
+        max-width: 18vw;
+        font-size: .875em;
+        word-wrap: break-word;
     }
 }
 
