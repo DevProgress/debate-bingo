@@ -36,8 +36,8 @@ export default class WelcomePage extends React.Component {
         );
     }
     selectCard(evt) {
-        ga('send', 'event', 'bingoCard', 'create', cardType);
         let cardType = (evt.target.tagName === "IMG" || evt.target.tagName === 'SPAN') ? evt.target.parentNode.id : evt.target.id;
+        ga('send', 'event', 'bingoCard', 'create', cardType);
         this.props.onCardTypeSelected(cardType);
     }
 }
