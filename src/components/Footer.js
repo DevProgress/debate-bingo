@@ -28,6 +28,7 @@ export default class Social extends Component {
     const shareUrl = window.location.href.split('#')[0]
 
     return (
+    <div>
       <div className="social-icons-bar">
         <div className="title">
           {this.props.heading}
@@ -94,6 +95,10 @@ export default class Social extends Component {
 
         </div>
       </div>
+      <div className="attribution">
+        Bingo images by Gage Skidmore, licensed under <a href="https://creativecommons.org/licenses/by-sa/2.0/">Creative Commons</a>
+      </div>
+    </div>
     );
   }
 }
