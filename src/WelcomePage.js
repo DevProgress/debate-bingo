@@ -15,7 +15,6 @@ export default class WelcomePage extends React.Component {
                 <h1 className="blue-header"><span>Debate Bingo</span></h1>
                 <div className="instructions">
                     <span><strong>Select a card</strong></span><br/>
-                    <span>(You can only play one card at a time)</span>
                 </div>
                 <ul className="homepage-button-wrapper">
                     <li>
