@@ -110,7 +110,7 @@ export default class Social extends Component {
       </div>
       <div className="social-icons-bar">
         <div className="devprogress">
-          Built by <a href="http://devprogress.us">DevProgress</a>.
+          Built by the volunteers with <a href="http://devprogress.us">DevProgress</a>.
           Want to help? It&#39;s <a href="https://github.com/devprogress/debate-bingo">open source.</a>
           <br />
         </div>
