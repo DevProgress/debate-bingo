@@ -262,6 +262,10 @@ table {
 .attribution {
     font-size: x-small;
     padding-top: 1px;
+    a, a:link, a:visited {
+        color: -webkit-link;
+        text-decoration: underline;
+    }
 }
 
 .donateButton {
