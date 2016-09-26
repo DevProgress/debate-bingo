@@ -142,11 +142,14 @@ table {
         background: $highlightBlue;
         color: white;
         padding: 8px;
+        font-family: Helvetica,Arial,sans-serif;
     }
 }
 
 .instructions {
     margin-top: 30px;
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 1.3em;
 }
 
 .home {
@@ -178,6 +181,7 @@ table {
                 display: inline-block;
                 padding-left: 0.5em;
                 font-size: 1.4em;
+                font-family: Helvetica,Arial,sans-serif;
             }
         }
         a#trump {
@@ -267,9 +271,17 @@ table {
   display: inline-block;
   text-align: center;
   font-size: 0.75em;
+  a, a:link, a:visited {
+      color: -webkit-link;
+      text-decoration: underline;
+  }
 }
 
 #site {
     /* When deployed on squarespace, this prevents spurious padding */
     padding: 0 !important;
+}
+
+#headerWrapper {
+    display: none;
 }
