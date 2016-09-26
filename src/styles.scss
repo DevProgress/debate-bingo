@@ -107,6 +107,9 @@ table {
     a {
        color: white;
     }
+    h2 {
+       color: white;
+    }
     overflow: auto;
 }
 .bingoImageOverlay {
@@ -262,6 +265,10 @@ table {
 .attribution {
     font-size: x-small;
     padding-top: 1px;
+    a, a:link, a:visited {
+        color: -webkit-link;
+        text-decoration: underline;
+    }
 }
 
 .donateButton {
@@ -286,4 +293,8 @@ table {
 
 #headerWrapper {
     display: none;
+}
+
+.sqs-block:first-child {
+    padding-top: 0px;
 }
