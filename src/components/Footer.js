@@ -92,13 +92,33 @@ export default class Social extends Component {
             className="share-count">
             {count => count}
           </LinkedinShareCount>}
-
         </div>
       </div>
-      <div className="attribution">
-        Bingo images by Gage Skidmore, licensed under <a href="https://creativecommons.org/licenses/by-sa/2.0/">Creative Commons</a>
+      <div className="social-icons-bar">
+        <div className="devprogress">
+          <a data-action="donate"
+            href="https://www.hillaryclinton.com/donate/?amount=10.00&utm_source=debate-bingo"
+            target="donate">
+            <img src="../images/hillary-logo.svg" className="donateButton" alt="donate button" />
+           </a> &nbsp;
+          <a data-action="donate"
+            href="https://www.hillaryclinton.com/donate/?amount=10.00&utm_source=debate-bingo"
+            target="donate">
+          Help Hillary Clinton win. Donate $10.
+          </a>
+        </div>
       </div>
-    </div>
+      <div className="social-icons-bar">
+        <div className="devprogress">
+          Built by <a href="http://devprogress.us">DevProgress</a>.
+          Want to help? It&#39;s <a href="https://github.com/devprogress/debate-bingo">open source.</a>
+          <br />
+        </div>
+        <div className="attribution">
+          Bingo images by Gage Skidmore, licensed under <a href="https://creativecommons.org/licenses/by-sa/2.0/">Creative Commons</a>
+        </div>
+      </div>
+     </div>
     );
   }
 }

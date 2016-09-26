@@ -242,6 +242,7 @@ table {
 
 .social-icons-bar {
   margin-top: 10px;
+  text-align: center;
 }
 
 .share-button {
@@ -251,4 +252,15 @@ table {
 .attribution {
     font-size: x-small;
     padding-top: 1px;
+}
+
+.donateButton {
+  max-width: 30px;
+  max-height: 30px;
+}
+
+.devprogress {
+  display: inline-block;
+  text-align: center;
+  font-size: 0.75em;
 }
