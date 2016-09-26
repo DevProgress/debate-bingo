@@ -99,7 +99,7 @@ export default class Social extends Component {
           <a data-action="donate"
             href="https://www.hillaryclinton.com/donate/?amount=10.00&utm_source=debate-bingo"
             target="donate">
-            <img src="../images/hillary-logo.svg" className="donateButton" alt="donate button" />
+            <img src="images/hillary-logo.svg" className="donateButton" alt="donate button" />
            </a> &nbsp;
           <a data-action="donate"
             href="https://www.hillaryclinton.com/donate/?amount=10.00&utm_source=debate-bingo"
