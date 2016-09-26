@@ -198,7 +198,7 @@ export default class BingoCard extends React.Component {
         onSuccess(chosenTerms);
     }
     render() {
-        let bingoImagePath = `images/${this.props.type}_win.jpg`;
+        let bingoImagePath = `https://devprogress.us/debate-bingo/images/${this.props.type}_win.jpg`;
         let bingoOverlay = !this.state.isBingo ? null : (
             <div className="bingoOverlay">
                 <h2>Bingo!</h2>
@@ -218,7 +218,7 @@ export default class BingoCard extends React.Component {
                 <BingoRow tiles={row} rowIndex={i} daubs={this.state.daubs} onTileDaubed={this.handleTileDaubed.bind(this, i)} key={key} />
             );
         }.bind(this));
-        let imagePath = `images/${this.props.type}-2x.png`,
+        let imagePath = `https://devprogress.us/debate-bingo/images/${this.props.type}-2x.png`,
             cardName;
         if (this.props.type === 'hillary') {
             cardName = 'Hillary Clinton';
