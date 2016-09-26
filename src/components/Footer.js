@@ -115,8 +115,8 @@ export default class Social extends Component {
           <br />
         </div>
         <div className="attribution">
-          Bingo images by Gage Skidmore, licensed under <a
-          href="https://creativecommons.org/licenses/by-sa/2.0/">Creative Commons</a>. Icons by Lorie Shaull, licensed under <a href="https://creativecommons.org/licenses/by/3.0/us">Creative Commons</a>
+          Bingo winner images by Gage Skidmore, licensed under <a
+          href="https://creativecommons.org/licenses/by-sa/2.0/">Creative Commons</a>
         </div>
       </div>
      </div>
