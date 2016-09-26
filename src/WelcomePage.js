@@ -10,7 +10,7 @@ export default class WelcomePage extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="home">
                 <h1 className="blue-header"><span>2016</span></h1>
                 <h1 className="blue-header"><span>Debate Bingo</span></h1>
                 <div className="instructions">
