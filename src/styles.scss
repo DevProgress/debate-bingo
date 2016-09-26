@@ -107,6 +107,9 @@ table {
     a {
        color: white;
     }
+    h2 {
+       color: white;
+    }
     overflow: auto;
 }
 .bingoImageOverlay {
@@ -290,4 +293,8 @@ table {
 
 #headerWrapper {
     display: none;
+}
+
+.sqs-block:first-child {
+    padding-top: 0px;
 }
