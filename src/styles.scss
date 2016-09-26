@@ -264,3 +264,8 @@ table {
   text-align: center;
   font-size: 0.75em;
 }
+
+#site {
+    /* When deployed on squarespace, this prevents spurious padding */
+    padding: 0 !important;
+}
