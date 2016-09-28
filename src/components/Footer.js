@@ -95,7 +95,7 @@ export default class Social extends Component {
         </div>
       </div>
       <div className="social-icons-bar">
-        <div className="devprogress">
+        <div className="devprogress" onClick={() => {ga('send', 'event', 'donate', 'donate', 'donate');}}>
           <a data-action="donate"
             href="https://www.hillaryclinton.com/donate/?amount=10.00&utm_source=debate-bingo"
             target="donate">
