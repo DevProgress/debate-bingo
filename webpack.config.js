@@ -2,12 +2,13 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyPlugin = require('copy-webpack-plugin');
 var webpack = require('webpack');
 var Promise = require('es6-promise')
+var outputDirectory = process.argv[2] == '-p' ? './docs' : './dev';
 
 module.exports = {
   entry: './src/debate-bingo.js',
   context: __dirname,
   output: {
-    path: './dist',
+    path: outputDirectory,
     filename: 'bundle.js'
   },
   module: {
