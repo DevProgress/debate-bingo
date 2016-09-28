@@ -6,7 +6,7 @@
     "type": "git",
     "url": "git+https://github.com/DevProgress/debate-bingo.git"
   },
-  "main": "dist/debate-bingo.js",
+  "main": "docs/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack",
@@ -15,8 +15,8 @@
     "express-server": "node server",
     "dev": "concurrently --kill-others \"npm run webpack-watch\" \"npm run express-server\"",
     "postinstall": "npm run webpack-prod",
-    "clean": "node -e \"var rimraf=require('rimraf'); rimraf.sync('dist')\"",
-    "deploy": "git subtree push --prefix dist origin gh-pages",
+    "clean": "node -e \"var rimraf=require('rimraf'); rimraf.sync('docs')\"",
+    "deploy": "webpack -p",
     "start": "npm run express-server"
   },
   "engines": {

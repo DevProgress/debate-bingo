@@ -26,16 +26,14 @@ To build and watch, run
 
 This will build the app using WebPack and run a local server at `http://localhost:3000` with a watch, so edits to JS and Sass files will trigger a rebuild.
 
+The development build will output into in the `dev` directory, which is explicitly git-ignored, so you can play with it as much as you want and not accidentally push the changes into production.
+
 #### Deploy
 
-You need to be on a clone, not a fork, of the repo.
+The `docs` directory is [automatically deployed](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/#publishing-your-github-pages-site-from-a-docs-folder-on-your-master-branch) to Github Pages. To push the new build to production:
 
-1. Run `npm run webpack-prod` to generate the app using WebPack
-2. If there are any changes in the `/dist` dir (check with `git status`), commit and push them.
-3. Run `npm run deploy` to push current contents of the `dist` dir to the `gh-pages` branch.
-
-This will push the dist/ subtree to the gh-pages branch, which is linked to our
-github pages instance, https://devprogress.us/debate-bingo/
+1. Run `npm run deploy` to generate the app using WebPack
+2. Commit and push changes to `/docs` dir.
 
 It might take 15m or more for that page to update after you've pushed.
 
