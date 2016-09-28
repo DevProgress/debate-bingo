@@ -26,7 +26,7 @@ To build and watch, run
 
 This will build the app using WebPack and run a local server at `http://localhost:3000` with a watch, so edits to JS and Sass files will trigger a rebuild.
 
-The development build will be in the `dev` build, which is explicitly git-ignored, so you can play with it as much as you want and not accidentally push the changes into production.
+The development build will output into in the `dev` directory, which is explicitly git-ignored, so you can play with it as much as you want and not accidentally push the changes into production.
 
 #### Deploy
 
