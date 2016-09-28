@@ -30,7 +30,7 @@ export default class WelcomePage extends React.Component {
                         </a>
                     </li>
                 </ul>
-                <Footer heading="Share Debate Bingo!" title="Make watching the presidential debate more fun! Play bingo with the common phrases Hillary and Trump will say during the debate and tweet along with #2016debatebingo" shortTitle="Have fun watching the debate! Play bingo with what Hillary &amp; Trump say! Tweet along with #2016debatebingo"/>
+                <Footer heading="Share Debate Bingo!" title="Make watching the presidential debate more fun! Play bingo with the common phrases Hillary and Trump will say during the debate and tweet along with #2016debatebingo" shortTitle="Have fun watching the debate! Play bingo with what Hillary &amp; Trump say! Tweet along with #2016debatebingo" overlayLinkClass="welcomePageLinks"/>
             </div>
         );
     }

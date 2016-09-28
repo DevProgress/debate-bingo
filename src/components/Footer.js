@@ -26,6 +26,7 @@ const LinkedinIcon = generateShareIcon('linkedin');
 export default class Social extends Component {
   render() {
     const shareUrl = window.location.href.split('#')[0]
+    var overlayLinksClass = "social-icons-bar " + this.props.overlayLinkClass;
 
     return (
     <div>
@@ -108,7 +109,7 @@ export default class Social extends Component {
           </a>
         </div>
       </div>
-      <div className="social-icons-bar">
+      <div className={overlayLinksClass}>
         <div className="devprogress">
           Built by the volunteers with <a href="http://devprogress.us">DevProgress</a>.
           Want to help? It&#39;s <a href="https://github.com/devprogress/debate-bingo">open source.</a>
