@@ -11,10 +11,12 @@ export default class BingoRow extends React.Component {
             }.bind(this);
             let key = `tile-${i}`,
                 isFreeSquare = this.props.rowIndex === 2 && i === 2,
-                tileText = isFreeSquare ? 'Free Square!': tile.text;
+                tileText = isFreeSquare ? 'Free Square!': tile.text,
+                isFirstRow = this.props.rowIndex === 0,
+                colorClass = isFirstRow ? tile.colorClass: "";
             return (
                 <BingoTile
-                    colorClass={tile.colorClass}
+                    colorClass={colorClass}
                     isDaubed={rowDaubs[i] === 1 || isFreeSquare}
                     isHighlighted={rowDaubs[i] === 2}
                     isFreeSquare={isFreeSquare}
