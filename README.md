@@ -2,7 +2,15 @@
 Bingo game for presidential & vice presidential debates
 
 ## Contributing
-Feel free to fork, claim an issue (or create one), and submit pull requests :)
+This project launched for the first 2016 Presidential debate. Lots of other organizations launched similar sites, so the team decided to put their efforts on other projects. If you revive the project, you might want to check out the closed issues with the WONTFIX tag; these were the next items on our list.
+
+We leave you with this poem:
+
+Here's the depot for some debate bingo <br />
+It wasn't a popular thing-o <br />
+But if you revive it <br />
+And make it alive, it <br />
+Will make the old team want to sing-o.
 
 ### Technology
 Debate bingo is a simple mobile web app built with Node.js on the server and React on the client.
@@ -39,7 +47,7 @@ It might take 15m or more for that page to update after you've pushed.
 
 ## Troubleshooting
 Most problems can be solved by running ``npm install``. Make sure you're in the
-base debate-bingo directory, not the src direcfory.
+base debate-bingo directory, not the src directory.
 
 Check your node version with ``node -v``. If it's a 0.10 version, update using
 instructions at https://nodejs.org/en/download/package-manager/
